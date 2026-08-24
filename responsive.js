@@ -18,6 +18,17 @@
     const naturalHeight=sheet.offsetHeight||1123;
     wrap.style.height=`${Math.ceil(naturalHeight*scale)+24}px`;
   }
+  function syncMobileNav(view){
+    document.querySelectorAll('.mobile-nav-item').forEach(btn=>btn.classList.toggle('active',btn.dataset.view===view));
+  }
+  document.querySelectorAll('.mobile-nav-item').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const view=btn.dataset.view;
+      if(typeof window.setView==='function')window.setView(view);
+      syncMobileNav(view);
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
   let raf=0;
   function schedule(){cancelAnimationFrame(raf);raf=requestAnimationFrame(fitDocument)}
   new MutationObserver(schedule).observe(document.getElementById('app')||document.body,{childList:true,subtree:true});
