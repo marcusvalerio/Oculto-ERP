@@ -1,0 +1,12 @@
+{
+  "name": "Fiscal Generator — Ambiente de Estudo",
+  "short_name": "Fiscal Generator",
+  "description": "Laboratório educacional de NF-e, CT-e e MDF-e sem validade fiscal.",
+  "lang": "pt-BR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eeeae2",
+  "theme_color": "#eeeae2",
+  "icons": []
+}
